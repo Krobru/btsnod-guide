@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="fr-BE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mode d'emploi BTSNOD (ON4LBO-7)</title><style>body{background:#000;color:#cfe3ff;font-family:system-ui,sans-serif;max-width:900px;margin:auto;padding:1.5em;line-height:1.55}
+h1,h2,h3{color:#4da3ff}a{color:#7fbfff}table{border-collapse:collapse;width:100%}th,td{border:1px solid #1e4a80;padding:.4em .6em}
+th{background:#0a2547}code,pre{background:#0b1830;color:#9fd0ff;border-radius:4px}pre{padding:.8em;overflow:auto}code{padding:.1em .3em}
+blockquote{border-left:4px solid #2a6fd1;margin:0;padding:.3em 1em;background:#06122a}hr{border:0;border-top:1px solid #1e4a80}</style></head><body><h1>Mode d'emploi – Nœud packet BTSNOD (ON4LBO-7)</h1>
+<p>Guide pour les OM de la section UBA <strong>BTS</strong> : messages APRS « SMS » et packet radio via le nœud <strong>BTSNOD</strong>.</p>
+<blockquote>
+<p><strong>Nœud de test</strong> exploité par <strong>ON4LBO</strong>, locator <strong>JO20GQ</strong>.
+Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif <strong>ON0BTS-8</strong>. Ce guide sera mis à jour à ce moment-là.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Indicatif</th>
+<th>Alias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nœud</td>
+<td>ON4LBO-7</td>
+<td>BTSNOD</td>
+</tr>
+<tr>
+<td>BBS</td>
+<td>ON4LBO-1</td>
+<td>BTSBBS</td>
+</tr>
+<tr>
+<td>Chat</td>
+<td>ON4LBO-4</td>
+<td>BTSCHT</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. Messages APRS « SMS » (144,800 MHz)</h2>
+<h3>1.1 Règle n°1 : un SSID unique par radio</h3>
+<p>Chaque station sur l'air doit avoir un indicatif + SSID <strong>unique</strong>. Deux appareils avec le même indicatif-SSID s'ignorent mutuellement : les messages ne s'affichent pas.</p>
+<ul>
+<li><code>-7</code> : portatif (attention : <strong>ON4LBO-7 est pris par le nœud</strong>)</li>
+<li><code>-9</code> : mobile / voiture</li>
+<li><code>-10</code>, <code>-5</code>… : autres usages</li>
+</ul>
+<p>Exemple : ON4XYZ-9 dans la voiture, ON4XYZ-7 pour le portatif.</p>
+<h3>1.2 Envoyer un message au nœud</h3>
+<ol>
+<li>Radio sur <strong>144,800 MHz</strong>, APRS activé, votre indicatif-SSID configuré.</li>
+<li>Menu messages → <em>Nouveau message</em> / <em>Compose</em>.</li>
+<li>Destinataire : <strong>ON4LBO-7</strong>.</li>
+<li>Texte : <strong>67 caractères maximum</strong>, <strong>sans accents</strong> (ils s'affichent en « ? »).</li>
+<li>Envoyer.</li>
+</ol>
+<p>Le nœud <strong>acquitte automatiquement</strong> (ACK) : votre radio affiche alors « ACK », « Reçu » ou une coche. Sans ACK, la radio réessaie quelques fois puis abandonne.</p>
+<h3>1.3 Recevoir des messages</h3>
+<p>Le sysop peut vous envoyer un message direct : il s'affiche sur votre radio si elle porte <strong>exactement</strong> l'indicatif-SSID visé. Votre radio renvoie l'ACK automatiquement.</p>
+<h3>1.4 Lire les bulletins (BLN1…)</h3>
+<p>Les bulletins sont des messages pour tous, adressés à <code>BLN1</code>, <code>BLN2</code>… Sur la plupart des radios, ils apparaissent dans la liste des messages ou dans une rubrique <em>Bulletins</em>. Vérifiez que la réception des bulletins n'est pas filtrée dans le menu APRS.</p>
+<h3>1.5 Menus types (TH-D75, TH-D74, FTM-400, FTM-500, FT5D…)</h3>
+<p>Les noms varient, la logique est la même :
+- <strong>Kenwood TH-D74/D75</strong> : touche <em>APRS</em> / <em>MSG</em> → <em>New</em> → saisie du destinataire puis du texte → <em>Send</em>. La liste des messages montre l'état (ACK).
+- <strong>Yaesu FTM / FT5D</strong> : <em>APRS</em> → <em>Message</em> → <em>Nouveau</em> → <em>Callsign</em> puis <em>Text</em> → <em>TX</em>.
+- Réglages à vérifier : indicatif + SSID, fréquence 144,800, <em>beacon</em> / <em>TX</em> autorisé, filtre messages/bulletins.</p>
+<blockquote>
+<p>Note : un TH-D75 utilisé en mode <strong>KISS</strong> (TNC pour PC) ne fait pas son APRS interne en même temps.</p>
+</blockquote>
+<hr />
+<h2>2. Packet radio : se connecter au nœud</h2>
+<p><strong>Fréquence packet : <em>fréquence à confirmer</em></strong> – 1200 bauds AFSK, VHF.</p>
+<h3>2.1 Matériel / logiciel</h3>
+<ul>
+<li><strong>Radio avec TNC KISS intégré</strong> (TH-D72/D74/D75…) en USB/Bluetooth + un logiciel terminal (QtTermTCP, Outpost, PuTTY via KISS, etc.).</li>
+<li><strong>Direwolf</strong> (TNC logiciel) + interface son (Digirig, SignaLink…) + radio FM. Direwolf ouvre un port KISS (TCP 8001) ou AGW (8000) utilisé par le terminal.</li>
+<li><strong>TNC matériel</strong> classique en mode terminal.</li>
+<li>Sous Linux : <code>ax25-tools</code> (<code>kissattach</code>, <code>axcall</code>) possible.</li>
+</ul>
+<p>Réglages radio : FM, squelch ouvert juste au-dessus du bruit, pas de CTCSS, puissance modérée.</p>
+<h3>2.2 Connexion</h3>
+<p>Depuis le terminal :</p>
+<pre><code>C ON4LBO-7
+</code></pre>
+<p>ou</p>
+<pre><code>C BTSNOD
+</code></pre>
+<p>Le nœud affiche sa bannière et l'invite <code>BTSNOD:ON4LBO-7}</code>.</p>
+<h3>2.3 Commandes du nœud</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>?</code></td>
+<td>Liste des commandes</td>
+</tr>
+<tr>
+<td><code>NODES</code> (<code>N</code>)</td>
+<td>Nœuds connus</td>
+</tr>
+<tr>
+<td><code>MH 3</code></td>
+<td>Stations entendues récemment sur le port radio</td>
+</tr>
+<tr>
+<td><code>PORTS</code></td>
+<td>Ports du nœud</td>
+</tr>
+<tr>
+<td><code>INFO</code> (<code>I</code>)</td>
+<td>Infos sur le nœud</td>
+</tr>
+<tr>
+<td><code>BBS</code></td>
+<td>Accès à la BBS</td>
+</tr>
+<tr>
+<td><code>CHAT</code></td>
+<td>Accès au chat</td>
+</tr>
+<tr>
+<td><code>BYE</code> (<code>B</code>)</td>
+<td>Déconnexion</td>
+</tr>
+</tbody>
+</table>
+<h3>2.4 Chat BTSCHT (ON4LBO-4)</h3>
+<p>Tapez <code>CHAT</code> au nœud (ou <code>C BTSCHT</code> / <code>C ON4LBO-4</code> directement).
+- Tapez votre texte puis Entrée : il est diffusé à tous les présents.
+- <code>/H</code> : aide · <code>/U</code> : qui est là · <code>/B</code> : quitter le chat.</p>
+<h3>2.5 BBS BTSBBS (ON4LBO-1)</h3>
+<p>Tapez <code>BBS</code> (ou <code>C BTSBBS</code>). Première connexion : la BBS vous demande votre nom et éventuellement votre QTH.
+| Commande | Rôle |
+|---|---|
+| <code>L</code> | Lister les nouveaux messages |
+| <code>R n</code> | Lire le message n |
+| <code>SP INDICATIF</code> | Envoyer un message personnel |
+| <code>SB ALL</code> | Envoyer un bulletin |
+| <code>KM</code> | Effacer ses messages lus |
+| <code>H</code> | Aide |
+| <code>B</code> | Quitter |</p>
+<p>Pour envoyer : titre, puis texte, terminer par <code>/EX</code> sur une ligne seule.</p>
+<hr />
+<h2>3. Interface web</h2>
+<p>L'interface web du nœud (gestion, page SMS APRS) est <strong>réservée au sysop</strong>. Les OM utilisent l'APRS et le packet par radio.</p>
+<hr />
+<h2>Bonnes pratiques</h2>
+<ul>
+<li>Messages courts, pas d'accents, identifiez-vous.</li>
+<li>Pas de répétitions inutiles sur 144,800 (fréquence partagée).</li>
+<li>Problème ou suggestion : contactez <strong>ON4LBO</strong> sur l'air ou via la section BTS.</li>
+</ul>
+<p>73 – ON4LBO, section UBA BTS</p></body></html>
