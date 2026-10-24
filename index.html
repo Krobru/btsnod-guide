@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="fr-BE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mode d'emploi BTSNOD (ON4LBO-7)</title><style>body{background:#000;color:#cfe3ff;font-family:system-ui,sans-serif;max-width:900px;margin:auto;padding:1.5em;line-height:1.55}
+<!DOCTYPE html><html lang="fr-BE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mode d'emploi BTSNOD (ON5EE-7)</title><style>body{background:#000;color:#cfe3ff;font-family:system-ui,sans-serif;max-width:900px;margin:auto;padding:1.5em;line-height:1.55}
 h1,h2,h3{color:#4da3ff}a{color:#7fbfff}table{border-collapse:collapse;width:100%}th,td{border:1px solid #1e4a80;padding:.4em .6em}
 th{background:#0a2547}code,pre{background:#0b1830;color:#9fd0ff;border-radius:4px}pre{padding:.8em;overflow:auto}code{padding:.1em .3em}
-blockquote{border-left:4px solid #2a6fd1;margin:0;padding:.3em 1em;background:#06122a}hr{border:0;border-top:1px solid #1e4a80}</style></head><body><h1>Mode d'emploi – Nœud packet BTSNOD (ON4LBO-7)</h1>
+blockquote{border-left:4px solid #2a6fd1;margin:0;padding:.3em 1em;background:#06122a}hr{border:0;border-top:1px solid #1e4a80}</style></head><body><h1>Mode d'emploi – Nœud packet BTSNOD (ON5EE-7)</h1>
 <p>Guide pour les OM de la section UBA <strong>BTS</strong> : messages APRS « SMS » et packet radio via le nœud <strong>BTSNOD</strong>.</p>
 <blockquote>
-<p><strong>Nœud de test</strong> exploité par <strong>ON4LBO</strong>, locator <strong>JO20GQ</strong>.
+<p><strong>Nœud de test</strong> exploité par <strong>ON5EE</strong>, locator <strong>JO20GQ</strong>.
 Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif <strong>ON0BTS-8</strong>. Ce guide sera mis à jour à ce moment-là.</p>
 </blockquote>
 <table>
@@ -18,17 +18,17 @@ Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif
 <tbody>
 <tr>
 <td>Nœud</td>
-<td>ON4LBO-7</td>
+<td>ON5EE-7</td>
 <td>BTSNOD</td>
 </tr>
 <tr>
 <td>BBS</td>
-<td>ON4LBO-1</td>
+<td>ON5EE-1</td>
 <td>BTSBBS</td>
 </tr>
 <tr>
 <td>Chat</td>
-<td>ON4LBO-4</td>
+<td>ON5EE-4</td>
 <td>BTSCHT</td>
 </tr>
 </tbody>
@@ -38,7 +38,7 @@ Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif
 <h3>1.1 Règle n°1 : un SSID unique par radio</h3>
 <p>Chaque station sur l'air doit avoir un indicatif + SSID <strong>unique</strong>. Deux appareils avec le même indicatif-SSID s'ignorent mutuellement : les messages ne s'affichent pas.</p>
 <ul>
-<li><code>-7</code> : portatif (attention : <strong>ON4LBO-7 est pris par le nœud</strong>)</li>
+<li><code>-7</code> : portatif (attention : <strong>ON5EE-7 est pris par le nœud</strong>)</li>
 <li><code>-9</code> : mobile / voiture</li>
 <li><code>-10</code>, <code>-5</code>… : autres usages</li>
 </ul>
@@ -47,7 +47,7 @@ Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif
 <ol>
 <li>Radio sur <strong>144,800 MHz</strong>, APRS activé, votre indicatif-SSID configuré.</li>
 <li>Menu messages → <em>Nouveau message</em> / <em>Compose</em>.</li>
-<li>Destinataire : <strong>ON4LBO-7</strong>.</li>
+<li>Destinataire : <strong>ON5EE-7</strong>.</li>
 <li>Texte : <strong>67 caractères maximum</strong>, <strong>sans accents</strong> (ils s'affichent en « ? »).</li>
 <li>Envoyer.</li>
 </ol>
@@ -77,12 +77,12 @@ Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif
 <p>Réglages radio : FM, squelch ouvert juste au-dessus du bruit, pas de CTCSS, puissance modérée.</p>
 <h3>2.2 Connexion</h3>
 <p>Depuis le terminal :</p>
-<pre><code>C ON4LBO-7
+<pre><code>C ON5EE-7
 </code></pre>
 <p>ou</p>
 <pre><code>C BTSNOD
 </code></pre>
-<p>Le nœud affiche sa bannière et l'invite <code>BTSNOD:ON4LBO-7}</code>.</p>
+<p>Le nœud affiche sa bannière et l'invite <code>BTSNOD:ON5EE-7}</code>.</p>
 <h3>2.3 Commandes du nœud</h3>
 <table>
 <thead>
@@ -126,11 +126,11 @@ Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif
 </tr>
 </tbody>
 </table>
-<h3>2.4 Chat BTSCHT (ON4LBO-4)</h3>
-<p>Tapez <code>CHAT</code> au nœud (ou <code>C BTSCHT</code> / <code>C ON4LBO-4</code> directement).
+<h3>2.4 Chat BTSCHT (ON5EE-4)</h3>
+<p>Tapez <code>CHAT</code> au nœud (ou <code>C BTSCHT</code> / <code>C ON5EE-4</code> directement).
 - Tapez votre texte puis Entrée : il est diffusé à tous les présents.
 - <code>/H</code> : aide · <code>/U</code> : qui est là · <code>/B</code> : quitter le chat.</p>
-<h3>2.5 BBS BTSBBS (ON4LBO-1)</h3>
+<h3>2.5 BBS BTSBBS (ON5EE-1)</h3>
 <p>Tapez <code>BBS</code> (ou <code>C BTSBBS</code>). Première connexion : la BBS vous demande votre nom et éventuellement votre QTH.
 | Commande | Rôle |
 |---|---|
@@ -150,6 +150,6 @@ Il sera ensuite déplacé sur le relais <strong>ON0BTS</strong> sous l'indicatif
 <ul>
 <li>Messages courts, pas d'accents, identifiez-vous.</li>
 <li>Pas de répétitions inutiles sur 144,800 (fréquence partagée).</li>
-<li>Problème ou suggestion : contactez <strong>ON4LBO</strong> sur l'air ou via la section BTS.</li>
+<li>Problème ou suggestion : contactez <strong>ON5EE</strong> sur l'air ou via la section BTS.</li>
 </ul>
-<p>73 – ON4LBO, section UBA BTS</p></body></html>
+<p>73 – ON5EE, section UBA BTS</p></body></html>

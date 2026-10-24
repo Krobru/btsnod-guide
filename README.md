@@ -1,15 +1,15 @@
-# Mode d'emploi – Nœud packet BTSNOD (ON4LBO-7)
+# Mode d'emploi – Nœud packet BTSNOD (ON5EE-7)
 
 Guide pour les OM de la section UBA **BTS** : messages APRS « SMS » et packet radio via le nœud **BTSNOD**.
 
-> **Nœud de test** exploité par **ON4LBO**, locator **JO20GQ**.
+> **Nœud de test** exploité par **ON5EE**, locator **JO20GQ**.
 > Il sera ensuite déplacé sur le relais **ON0BTS** sous l'indicatif **ON0BTS-8**. Ce guide sera mis à jour à ce moment-là.
 
 | Service | Indicatif | Alias |
 |---|---|---|
-| Nœud | ON4LBO-7 | BTSNOD |
-| BBS | ON4LBO-1 | BTSBBS |
-| Chat | ON4LBO-4 | BTSCHT |
+| Nœud | ON5EE-7 | BTSNOD |
+| BBS | ON5EE-1 | BTSBBS |
+| Chat | ON5EE-4 | BTSCHT |
 
 ---
 
@@ -18,7 +18,7 @@ Guide pour les OM de la section UBA **BTS** : messages APRS « SMS » et packet 
 ### 1.1 Règle n°1 : un SSID unique par radio
 Chaque station sur l'air doit avoir un indicatif + SSID **unique**. Deux appareils avec le même indicatif-SSID s'ignorent mutuellement : les messages ne s'affichent pas.
 
-- `-7` : portatif (attention : **ON4LBO-7 est pris par le nœud**)
+- `-7` : portatif (attention : **ON5EE-7 est pris par le nœud**)
 - `-9` : mobile / voiture
 - `-10`, `-5`… : autres usages
 
@@ -27,7 +27,7 @@ Exemple : ON4XYZ-9 dans la voiture, ON4XYZ-7 pour le portatif.
 ### 1.2 Envoyer un message au nœud
 1. Radio sur **144,800 MHz**, APRS activé, votre indicatif-SSID configuré.
 2. Menu messages → *Nouveau message* / *Compose*.
-3. Destinataire : **ON4LBO-7**.
+3. Destinataire : **ON5EE-7**.
 4. Texte : **67 caractères maximum**, **sans accents** (ils s'affichent en « ? »).
 5. Envoyer.
 
@@ -64,13 +64,13 @@ Réglages radio : FM, squelch ouvert juste au-dessus du bruit, pas de CTCSS, pui
 ### 2.2 Connexion
 Depuis le terminal :
 ```
-C ON4LBO-7
+C ON5EE-7
 ```
 ou
 ```
 C BTSNOD
 ```
-Le nœud affiche sa bannière et l'invite `BTSNOD:ON4LBO-7}`.
+Le nœud affiche sa bannière et l'invite `BTSNOD:ON5EE-7}`.
 
 ### 2.3 Commandes du nœud
 | Commande | Rôle |
@@ -84,12 +84,12 @@ Le nœud affiche sa bannière et l'invite `BTSNOD:ON4LBO-7}`.
 | `CHAT` | Accès au chat |
 | `BYE` (`B`) | Déconnexion |
 
-### 2.4 Chat BTSCHT (ON4LBO-4)
-Tapez `CHAT` au nœud (ou `C BTSCHT` / `C ON4LBO-4` directement).
+### 2.4 Chat BTSCHT (ON5EE-4)
+Tapez `CHAT` au nœud (ou `C BTSCHT` / `C ON5EE-4` directement).
 - Tapez votre texte puis Entrée : il est diffusé à tous les présents.
 - `/H` : aide · `/U` : qui est là · `/B` : quitter le chat.
 
-### 2.5 BBS BTSBBS (ON4LBO-1)
+### 2.5 BBS BTSBBS (ON5EE-1)
 Tapez `BBS` (ou `C BTSBBS`). Première connexion : la BBS vous demande votre nom et éventuellement votre QTH.
 | Commande | Rôle |
 |---|---|
@@ -113,6 +113,6 @@ L'interface web du nœud (gestion, page SMS APRS) est **réservée au sysop**. L
 ## Bonnes pratiques
 - Messages courts, pas d'accents, identifiez-vous.
 - Pas de répétitions inutiles sur 144,800 (fréquence partagée).
-- Problème ou suggestion : contactez **ON4LBO** sur l'air ou via la section BTS.
+- Problème ou suggestion : contactez **ON5EE** sur l'air ou via la section BTS.
 
-73 – ON4LBO, section UBA BTS
+73 – ON5EE, section UBA BTS
